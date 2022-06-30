@@ -50,6 +50,20 @@
             <div class="lg:p-12 max-w-md max-w-xl lg:my-0 my-12 mx-auto p-6 space-y-">
                 <h1 class="lg:text-3xl text-xl font-semibold mb-6"> Sign in</h1>
                 <!--<p class="mb-2 text-black text-lg"> Register to manage your account </p>-->
+
+                <div>
+                    <style> 
+                        h5{
+                            color: red;
+                        }
+                    </style>
+                    {% for message in messages %}
+                    <h5>{{message}}</h5>
+                    {% endfor %}
+
+                </div>
+
+
                 <form method="POST">
                     {% csrf_token %}
                     <!--<div class="flex lg:flex-row flex-col lg:space-x-2">
