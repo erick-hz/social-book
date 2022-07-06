@@ -9,9 +9,11 @@ from .models import Profile, Post
 
 @login_required(login_url='signin')
 def index(request):
-    user_objet = User.objects.get(username=request.user.username)
-    user_profile = Profile.objects.get(user=user_objet)
-    return render(request, 'index.html', {'user_profile': user_profile})
+    user_object = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=user_object)
+
+    posts = Post.objects.all()
+    return render(request, 'index.html', {'user_profile': user_profile, 'posts': posts})
 
 @login_required(login_url='signin')
 def upload(request):
@@ -27,6 +29,15 @@ def upload(request):
         return redirect('/')
     else:
         return redirect('/')
+
+@login_required(login_url='signin')
+def like_post(request):
+    pass
+
+@login_required(login_url='signin')
+def profile(request, pk):
+    return render(request, 'profile.html',)
+
 
 @login_required(login_url='signin')
 def settings(request):
