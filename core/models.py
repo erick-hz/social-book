@@ -22,7 +22,7 @@ class Post(models.Model):
     image = models.ImageField(upload_to='post_images')
     caption = models.TextField(blank=True)
     created_at = models.DateTimeField(default=datetime.now)
-    no_of_like = models.IntegerField(default=0)
+    no_of_likes = models.IntegerField(default=0)
 
     def __str__(self):
         return self.user
