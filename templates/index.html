@@ -208,7 +208,7 @@
                                 <div class="flex flex-1 items-center space-x-4">
                                     <a href="#">
                                         <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full">  
-                                            <img src="{% static 'assets/images/avatars/avatar-2.jpg' %}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
+                                            <img src="{{post.image.url}}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
                                         </div>
                                     </a>
                                     <span class="block capitalize font-semibold "> @{{post.user}} </span>
@@ -253,7 +253,7 @@
                             </div>
     
                             <div uk-lightbox>
-                                <a href="{% static 'assets/images/post/img4.jpg' %}">  
+                                <a href="{{post.image.url}}">  
                                     <img src="{{post.image.url}}" alt="">
                                 </a>
                             </div>
